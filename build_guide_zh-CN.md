@@ -1,4 +1,4 @@
-尝试 `pip install fairseq` 时若出现如下错误：
+Windows 下尝试 `pip install fairseq` 时若出现如下错误：
 ```
 error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
 ```
@@ -13,4 +13,9 @@ LINK : fatal error LNK1158: 无法运行“rc.exe”
 error: command 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\link.exe' failed with exit code 1158
 ```
 1. 将 `C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\` 下的 `rc.exe` 与 `rcdll.dll` 复制到 `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64` 下。
+   * 可以以管理员身份打开 cmd 并运行命令：
+     ```
+     copy "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\rc.exe" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64"
+     copy "C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\rcdll.dll" "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64"
+     ```
 2. 重新运行 `pip install fairseq` ，完成。
